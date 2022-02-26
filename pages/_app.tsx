@@ -1,9 +1,18 @@
+import React from 'react'
 import { AppProps } from 'next/app'
 
-import '@/styles/globals.css'
+import 'antd/dist/antd.css'
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+import Layout from '@/components/organisms/Layout'
+
+const MyApp = (app: AppProps) => {
+  const { Component, pageProps } = app
+
+  return (
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
+  )
 }
 
 export default MyApp
