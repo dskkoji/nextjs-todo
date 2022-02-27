@@ -8,9 +8,9 @@ import Form from '@/components/molecules/Form'
 import Table from './Table'
 
 const Main: React.FC = () => {
-  const addTodo = (todo: string) => {
+  const addTodo = async (todo:string) => {
     const docRef = collection(db, 'todos')
-    addDoc(docRef, {
+    await addDoc(docRef, {
       todo: todo,
       isComplete: false,
       date: new Date()
